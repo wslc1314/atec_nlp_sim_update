@@ -60,7 +60,7 @@ static：词向量在模型训练过程中保持不变；nonstatic：词向量�
 + 字级：static+1&2trainable 
 
 # 模型
-Evaluating with file: data/atec/10/train0.csv, local dict: data/atec/10/train0-2-2.json...
+Evaluating with file: data/atec/10/train0.csv, local dict: data/atec/10/train0-2-2.json...  
 Evaluating with file: data/atec/10/valid0.csv, local dict: data/atec/10/train0-2-2.json...
 ## SenMatchSen
 !["SenMatchSen.png"](models/SenMatchSen.png "模型结构")
@@ -69,7 +69,7 @@ Evaluating with file: data/atec/10/valid0.csv, local dict: data/atec/10/train0-2
 | reuse | num_params | epoch | threshold | t_f1 | v_f1 | threshold | t_f1 | v_f1 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | False | 2490441 | 68 | 0.50 | 0.6688 | 0.5360 | 0.40 | 0.6861 | 0.5533 |
-| True | 1638693 | 37 | 0.50 | 0.7044 | 0.5426 | 0.35 | 0.7051 | 0.5560 |
+| True | 1638693 | 37 | 0.50 | 0.7044 | 0.5426 | 0.35 | 0.7051 | 0.5560 |  
 + dropout取值  
 
 | dropout | num_params | epoch | threshold | t_f1 | v_f1 | threshold | t_f1 | v_f1 |
@@ -86,7 +86,14 @@ Evaluating with file: data/atec/10/valid0.csv, local dict: data/atec/10/train0-2
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 0.1 | 505941 | 44 | 0.50 | 0.6940 | 0.5533 | 0.40 | 0.6982 | 0.5725 |
 | 0.2 | 505941 | 67 | 0.50 | 0.7085 | 0.5583 | 0.50 | 0.7085 | 0.5583 |
-| 0.4 | 505941 |  | 0.50 |  |  |  |  |  |
+| 0.4 | 505941 | 96 | 0.50 | 0.6294 | 0.5277 | 0.50 | 0.6294 | 0.5277 |  
++ 词向量  
+
+| 词向量 | num_params | epoch | threshold | t_f1 | v_f1 | threshold | t_f1 | v_f1 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| atec+atec | 505941 | 44 | 0.50 | 0.6940 | 0.5533 | 0.40 | 0.6982 | 0.5725 |
+| atec+wc | 505941 | 54 | 0.50 | 0.7298 | 0.5520 | 0.45 | 0.7241 | 0.5616 |
+| wc+wc | 505941 | 37 | 0.50 | 0.7039| 0.5486 | 0.45 | 0.6927 | 0.5497 |
 ## SeqMatchSeq_BiMPM
 !["SeqMatchSeq_BiMPM.png"](models/SeqMatchSeq_BiMPM.png "模型结构")
 + dropout取值  
@@ -94,5 +101,12 @@ Evaluating with file: data/atec/10/valid0.csv, local dict: data/atec/10/train0-2
 | dropout | num_params | epoch | threshold | t_f1 | v_f1 | threshold | t_f1 | v_f1 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 0.1 | 407381 | 44 | 0.50 | 0.6865 | 0.5716 | 0.50 | 0.6865 | 0.5716 |
-| 0.2 | 407381 |  | 0.50 |  |  |  |  |  |
-| 0.4 | 407381 |  | 0.50 |  |  |  |  |  |
+| 0.2 | 407381 | 55 | 0.50 | 0.6619 | 0.5635 | 0.60 | 0.6776 | 0.5708 |
+| 0.4 | 407381 | 191 | 0.50 | 0.5803 | 0.5067 | 0.75 | 0.6880 | 0.5571 |  
++ 词向量  
+
+| 词向量 | num_params | epoch | threshold | t_f1 | v_f1 | threshold | t_f1 | v_f1 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| atec+atec | 407381 | 44 | 0.50 | 0.6865 | 0.5716 | 0.50 | 0.6865 | 0.5716 |
+| atec+wc | 407381 | 54 | 0.50 | 0.6935 | 0.5778 | 0.55 | 0.6936 | 0.5783 |
+| wc+wc | 407381 | 55 | 0.50 | 0.7396| 0.5711 | 0.50 | 0.7396| 0.5711 |
